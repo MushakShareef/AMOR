@@ -1,4 +1,9 @@
-// api/radio.js
+
+
+export const config = {
+  runtime: 'nodejs18.x',
+};
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
@@ -10,13 +15,18 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch("https://omshanti.in/amudhamazhai");
+
     if (!response.ok) {
       throw new Error(`Stream request failed with status ${response.status}`);
     }
 
     res.setHeader("Content-Type", "audio/mpeg");
 
-    // Stream directly to the response
+    response.body.on('error', err => {
+      console.error('Stream error:', err);
+      res.end();
+    });
+
     response.body.pipe(res);
   } catch (err) {
     console.error(err);
