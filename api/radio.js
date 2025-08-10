@@ -1,7 +1,5 @@
-
-
 export const config = {
-  runtime: 'nodejs18.x',
+  runtime: 'nodejs', // force Node.js instead of Edge
 };
 
 export default async function handler(req, res) {
@@ -22,6 +20,7 @@ export default async function handler(req, res) {
 
     res.setHeader("Content-Type", "audio/mpeg");
 
+    // Pipe the audio stream directly to the client
     response.body.on('error', err => {
       console.error('Stream error:', err);
       res.end();
