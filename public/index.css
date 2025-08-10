@@ -144,7 +144,7 @@
         .amLogo {
             margin: 50px 0;
             background-color: #840202;
-            height: 250px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -161,7 +161,7 @@
             justify-content: center;
             width: 100%;
             max-width: 100%;
-            height: 100px;   /*adjusted for Mobile view hieght*/
+              /*adjusted for Mobile view hieght*/
         }
 
         .player-section {
