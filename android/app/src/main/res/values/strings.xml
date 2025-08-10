@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rajyogi</string>
+    <string name="title_activity_main">rajyogi</string>
+    <string name="package_name">com.ameer.rajyogiapp</string>
+    <string name="custom_url_scheme">com.ameer.rajyogiapp</string>
+</resources>

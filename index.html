@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brahma Kumari's Tamil Radio</title>
+    <link rel="stylesheet" href="index.css">    
+</head>
+<body>
+    <!-- Keep Awake Indicator -->
+    <div class="keep-awake-indicator"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Brahma Kumari's Tamil Radio</h1>
+    </header>
+
+    <!-- Main Page -->
+    <div id="mainPage" class="page active">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/public/baba.png" alt="Logo" width="60" height="60">
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="player-section">
+                <button class="play-button" onclick="toggleRadio()">
+                    <svg id="playIcon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
+                
+                <div class="radio-status">
+                    <div class="amudhamazhai" id="statusText">Amudhamazhai</div>
+                    <div class="status-text" id="radioStatus">Ready to play</div>
+                    <div class="loading" id="loadingText">Connecting...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Page -->
+    <div id="schedulePage" class="page">
+        <div class="schedule-container">
+            <h2 style="text-align: center; color: #ff0000; margin-bottom: 10px;">Schedule</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Program</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5:00 AM</td>
+                        <td>Morning Meditation</td>
+                    </tr>
+                    <tr>
+                        <td>6:00 AM</td>
+                        <td>Spiritual Discourse</td>
+                    </tr>
+                    <tr>
+                        <td>7:00 AM</td>
+                        <td>Devotional Songs</td>
+                    </tr>
+                    <tr>
+                        <td>8:00 AM</td>
+                        <td>Morning Commentary</td>
+                    </tr>
+                    <tr>
+                        <td>9:00 AM</td>
+                        <td>Peace Message</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM</td>
+                        <td>Life Lessons</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 AM</td>
+                        <td>Spiritual Stories</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 PM</td>
+                        <td>Lunch Break</td>
+                    </tr>
+                    <tr>
+                        <td>1:00 PM</td>
+                        <td>Afternoon Session</td>
+                    </tr>
+                    <tr>
+                        <td>6:00 PM</td>
+                        <td>Evening Meditation</td>
+                    </tr>
+                    <tr>
+                        <td>8:00 PM</td>
+                        <td>Night Program</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- More Page -->
+    <div id="morePage" class="page">
+        <div class="more-container">
+            <div class="more-logo">
+                <h2>Amudhamazhai</h2>
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff0000, #cc0000); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">LOGO</div>
+            </div>
+            
+            <div class="menu-item" onclick="showDetail('about')">
+                <span>About Us</span>
+                <span>→</span>
+            </div>
+            
+            <div class="menu-item" onclick="showDetail('contact')">
+                <span>Contact</span>
+                <span>→</span>
+            </div>
+            
+            <div class="menu-item" onclick="shareApp()">
+                <span>Share</span>
+                <span>→</span>
+            </div>
+            
+            <div class="menu-item" onclick="showDetail('review')">
+                <span>Review</span>
+                <span>→</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Pages -->
+    <div id="aboutPage" class="detail-page">
+        <button class="back-button" onclick="showPage('morePage')">← Back</button>
+        <div class="detail-content">
+            <h2 style="color: #ff0000; margin-bottom: 15px;">About Us</h2>
+            <p>Brahma Kumari's Tamil Radio - Amudhamazhai is a spiritual radio station dedicated to spreading peace, wisdom, and spiritual knowledge through Tamil language programs.</p>
+            <br>
+            <p>We provide 24/7 spiritual content including meditation guidance, devotional music, spiritual discourses, and life-transforming messages to help listeners on their spiritual journey.</p>
+            <br>
+            <p>Join us in this divine journey towards self-realization and inner peace.</p>
+        </div>
+    </div>
+
+    <div id="contactPage" class="detail-page">
+        <button class="back-button" onclick="showPage('morePage')">← Back</button>
+        <div class="detail-content">
+            <h2 style="color: #ff0000; margin-bottom: 15px;">Contact Us</h2>
+            <p><strong>Email:</strong> info@omshanti.in</p>
+            <br>
+            <p><strong>Phone:</strong> +91 XXXX XXXXXX</p>
+            <br>
+            <p><strong>Website:</strong> https://omshanti.in/amudhamazhai</p>
+            <br>
+            <p><strong>Address:</strong> Brahma Kumaris Center<br>Tamil Nadu, India</p>
+        </div>
+    </div>
+
+    <div id="reviewPage" class="detail-page">
+        <button class="back-button" onclick="showPage('morePage')">← Back</button>
+        <div class="detail-content">
+            <h2 style="color: #ff0000; margin-bottom: 15px;">Review & Feedback</h2>
+            <p>We value your feedback! Please share your experience with Amudhamazhai Radio.</p>
+            <br>
+            <p>Your reviews help us improve our service and reach more spiritual seekers.</p>
+            <br>
+            <p>Rate us on Play Store or send us your feedback via email.</p>
+            <br>
+            <p>Thank you for being part of our spiritual community!</p>
+        </div>
+    </div>
+
+    <!-- Navigation Footer -->
+    <nav class="nav-footer">
+        <button class="nav-button active" onclick="showPage('mainPage')">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span>Listen</span>
+        </button>
+        
+        <button class="nav-button" onclick="showPage('schedulePage')">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+            <span>Schedule</span>
+        </button>
+        
+        <button class="nav-button" onclick="showPage('morePage')">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            <span>More</span>
+        </button>
+    </nav>
+
+    <!-- Audio Element -->
+    <audio id="radioPlayer" preload="none">
+        <source src="https://omshanti.in/amudhamazhai" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="index.js"></script>
+</body>
+</html>
