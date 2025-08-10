@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon.ico -->
-    <link rel="icon" href="/public/baba.png" type="image/x-icon">
     <title>Brahma Kumari's Tamil Radio</title>
     <link rel="stylesheet" href="index.css">    
 </head>
@@ -21,7 +19,7 @@
     <div id="mainPage" class="page active">
         <div class="logo-container">
             <div class="logo">
-                <img src="/public/baba.png" alt="Logo" width="60" height="60">
+                <img src="/public/baba.png" alt="Logo" >
             </div>
         </div>
         
@@ -203,8 +201,7 @@
 
     <!-- Audio Element -->
     <audio id="radioPlayer" preload="none">
-        <source src="https://omshanti.in/amudhamazhai" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="/api/radio" type="audio/mpeg">
     </audio>
 
     <script src="index.js"></script>
