@@ -13,6 +13,8 @@
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #000000 0%, #1a0000 100%);
+            border: 5px solid #fd0404;
+            border-radius: 12px;
             color: white;
             min-height: auto;
             display: flex;
