@@ -231,5 +231,20 @@
 
     gtag('config', 'G-70B8B61X69');
     </script>
+    <script>
+        window.addEventListener('beforeinstallprompt', (e) => {
+    // Track with Google Analytics
+    gtag('event', 'pwa_install_prompt_shown');
+
+    e.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+        gtag('event', 'pwa_installed');
+        } else {
+        gtag('event', 'pwa_install_dismissed');
+        }
+    });
+    });
+    </script>
+
 </body>
 </html>
