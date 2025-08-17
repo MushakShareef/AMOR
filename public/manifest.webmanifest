@@ -1,0 +1,16 @@
+{
+  "name": "Brahma Kumari's Tamil Radio",
+  "short_name": "BK Tamil Radio",
+  "description": "Amudhamazhai – 24/7 Tamil spiritual radio",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/Sbaba192New.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/Sbaba515New.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/amorTamil.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
